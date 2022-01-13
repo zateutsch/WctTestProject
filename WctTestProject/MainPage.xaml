@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="WctTestProject.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WctTestProject"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <TwoPaneView x:Name="test">
+        <TwoPaneView.Pane1>
+            <ListView ItemsSource="{x:Bind Items}" x:Name="myList" >
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:ListItem">
+                        <StackPanel>
+                            <TextBlock Text="{x:Bind text, Mode=TwoWay}"/>
+                        </StackPanel>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </TwoPaneView.Pane1>
+        <TwoPaneView.Pane2>
+            <TextBlock x:Name="myTextB"/>
+        </TwoPaneView.Pane2>
+    </TwoPaneView>
+</Page>
