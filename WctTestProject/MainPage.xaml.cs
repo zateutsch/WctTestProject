@@ -23,41 +23,10 @@ namespace WctTestProject
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public ObservableCollection<ListItem> Items = new ObservableCollection<ListItem>();
-        public ListItem currentItem;
-        public double initialListMaxHeight = Window.Current.Bounds.Height;
-        public double initialListMaxWidth = Window.Current.Bounds.Width;
 
         public MainPage()
         {
             this.InitializeComponent();
-            RegisterEventHandler();
-            for(int i = 0; i < 1000; i++)
-            {
-                Items.Add(new ListItem("test string"));
-            }
-        }
-
-        private void RegisterEventHandler()
-        {
-            myList.MaxHeight = Window.Current.Bounds.Height;
-            myList.MaxWidth = Window.Current.Bounds.Width;
-            test.SizeChanged += new SizeChangedEventHandler(this.List_SizeChanged);
-        }
-
-        private void List_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            myList.MaxHeight = Window.Current.Bounds.Height;
-            myList.MaxWidth = Window.Current.Bounds.Width;
-        }
-    }
-
-    public class ListItem
-    {
-        public string text;
-        public ListItem(string txt)
-        {
-            this.text = txt;
         }
     }
 }
